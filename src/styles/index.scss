@@ -1,11 +1,45 @@
+body {
+    background-color: lightgrey;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
 svg {
     background-color: lightgrey;
 }
 
 h1 {
-    color: green;
+    color: #CE1141;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-.bar {
-    color: red;
+rect {
+    fill: #CE1141;
+    stroke: black;
+}
+
+.MJ-year-dropdown {
+    display: flex;
+    justify-content: center;
+}
+
+.MJ-year {
+    background-color: #CE1141;
+    width: 200px;
+    height: 40px;
+    text-align-last: center;
 }
