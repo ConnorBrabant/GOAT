@@ -1,4 +1,4 @@
-.bar-graph{width:1200px;height:800px;border:1px black solid}h1{color:green}
+body{background-color:lightgrey}.page{display:flex;justify-content:center}.main{display:flex;flex-direction:column;justify-content:center}.title{display:flex;justify-content:center}svg{background-color:lightgrey}h1{color:#CE1141;text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000}rect{fill:#CE1141;stroke:black}.MJ-year-dropdown{display:flex;justify-content:center}.MJ-year{color:white;font-size:17px;font-weight:600;text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;background-color:#CE1141;width:200px;height:40px;-moz-text-align-last:center;text-align-last:center}.jordan-line{fill:none;stroke:#CE1141;stroke-width:2}.bird-line{fill:none;stroke:green;stroke-width:2}.johnson-line{fill:none;stroke:purple;stroke-width:2}.james-line{fill:none;stroke:#041E42;stroke-width:2}
 
 
 /*# sourceMappingURL=main.css.map*/

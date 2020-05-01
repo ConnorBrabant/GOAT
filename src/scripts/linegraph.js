@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(yMax);
             (xDomainValue.length)
 
-            
+
             if (xDomainValue.length === stats.length) {
                 d3.selectAll('.x-axis').remove()
                 d3.selectAll('.y-axis').remove()
