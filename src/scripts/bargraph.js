@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             obj['value'] = parseFloat(allData[allData.length-1][ele])
             subData.push(obj);
             }
-
+            
         data = subData.slice(1); 
         xScale.domain(data.map(function (d) { return d.stat }))
         yScale.domain([0, 40])

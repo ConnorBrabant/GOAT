@@ -38,31 +38,35 @@ rect {
 }
 
 .MJ-year {
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     background-color: #CE1141;
     width: 200px;
     height: 40px;
     text-align-last: center;
 }
 
-.MJ-line {
+.jordan-line {
     fill: none;
     stroke: #CE1141;
     stroke-width: 2;
 }
 
-.LB-line {
+.bird-line {
     fill: none;
     stroke: green;
     stroke-width: 2;
 }
 
-.Magic-line {
+.johnson-line {
     fill: none;
     stroke: purple;
     stroke-width: 2;
 }
 
-.Lebron-line {
+.james-line {
     fill: none;
     stroke: #041E42;
     stroke-width: 2;
