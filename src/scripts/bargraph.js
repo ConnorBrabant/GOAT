@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         svg.append('g')
             .attr("transform", "translate(0, 500)") // shifts x axis to bottom
             .call(xAxis);
-                
+
         const bar = svg.selectAll('.bar');
         bar
             .data(data)
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .attr("height", function (d) { return height - yScale(d.value) })
     
         dropdown.on("change", function () {
-            // console.log('change')
+
             year = d3.event.target.value;
             let subData = [];
             for (ele in allData[year-1]) {
@@ -73,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 .transition()
                 .duration(1000)
                 .attr("y", function (d) {
-                    console.log('hit')
                     return yScale(d.value)
                 })
                 .attr("height", function (d) { return height - yScale(d.value) });  

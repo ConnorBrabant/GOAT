@@ -12,6 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const xScale = d3.scaleBand().range([0, width])
     const yScale = d3.scaleLinear().range([height, 0]);
 
+    const yAxisValues = {
+        'max': null,
+        'min': null
+    };
+
+    let xAxisValues = null;
+
     const addLine = function(pathname, className, stat) {
         d3.csv(`/src/data/${pathname}data.csv`, function (data) {
             let stats = [];
@@ -24,60 +31,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             })
 
-            let yValues = function() {
-                if (d3.selectAll('.line')._groups[0][0]) {
-                    let elements = document.getElementsByClassName('line')
-                    let values = [];
-                    for (let i = 0; i < elements.length; i++) {
-                        let minAndMax = elements[i].getAttribute('stats').split(",")
-                        values.push(minAndMax[0])
-                        values.push(minAndMax[1])
-                    }
-                    let currentStats = stats.map(ele => ele[`${stat}`])
-                    values.push(Math.max.apply(Math, currentStats))
-                    values.push(Math.min.apply(Math, currentStats))
-                    return values
-                }
-            }
+            let changed = false; 
+            let statsMinAndMax = Object.values(stats).map(ele => ele[stat])
+            if (!yAxisValues['max'] || yAxisValues['max'] < Math.max.apply(Math, statsMinAndMax)) {
+                yAxisValues['max'] = Math.max.apply(Math, statsMinAndMax)
+                changed = true;
+            } 
+            if (!yAxisValues['min'] || yAxisValues['min'] > Math.min.apply(Math, statsMinAndMax)) {
+                yAxisValues['min'] = Math.min.apply(Math, statsMinAndMax)
+                changed = true;
+            } 
 
-            let yAxisValues = yValues();
-            let yMax;
-            let yMin;
-            if (yAxisValues) {
-                yMax = Math.max.apply(Math, yAxisValues);
-                yMin = Math.min.apply(Math, yAxisValues)
-            } else {
-                yMax = Math.max.apply(Math, stats.map(ele => ele[`${stat}`]))
-                yMin = Math.min.apply(Math, stats.map(ele => ele[`${stat}`]))
-            }
-
-            let xAxisYears = function() {
-                if (svg.selectAll('g')._groups[0].length) {
-                    let xAxes = document.getElementsByClassName('x-axis')
-                    for (let i = 0; i < xAxes.length;i++) {
-                    maxYears = xAxes[i].getAttribute('year');
-                    let maxYear = maxYears > stats.length ? stats.length : maxYears
-                    return Array.from(new Array(maxYear - 1), (x, i) => i + 1 )
-                    } 
-                } else {
-                    return Array.from(new Array(stats.length - 1), (x, i) => i + 1)
-                }   
-            }
-
-            let xDomainValue = xAxisYears();
-            xDomainValue.push('career')
-
-            console.log(yMin);
-            console.log(yMax);
-            (xDomainValue.length)
-
-
-            if (xDomainValue.length === stats.length) {
+            let xAxisValuesArray;
+            let statsToRender;
+            // console.log(`${className}: ${xAxisValues}`)
+            // console.log(stats.length)
+            if (!xAxisValues || xAxisValues > stats.length || changed) {
+                xAxisValues = stats.length;
+                xAxisValuesArray = Array.from(new Array(xAxisValues - 1), (x, i) => i + 1);
+                xAxisValuesArray.push('career');
+                statsToRender = stats;
                 d3.selectAll('.x-axis').remove()
                 d3.selectAll('.y-axis').remove()
 
-                xScale.domain(xDomainValue.map(ele => ele))
-                yScale.domain([yMin, yMax])
+                xScale.domain(xAxisValuesArray.map(ele => ele))
+                yScale.domain([yAxisValues['min'] - 2, yAxisValues['max'] + 2])
 
                 const xAxis = d3.axisBottom()
                     .scale(xScale);
@@ -92,22 +70,44 @@ document.addEventListener('DOMContentLoaded', () => {
                 svg.append('g')
                     .attr('class', 'x-axis')
                     .attr('year', stats.length)
-                    .attr("transform", "translate(0, 500)") // shifts x axis to bottom
+                    .attr("transform", "translate(0, 500)") 
                     .call(xAxis);
-            } else if (xDomainValue.length < stats.length) {
-                stats = stats.slice(0, xDomainValue.length -1).concat(stats.pop())
+            } else if (stats.length >= xAxisValues) {
+                statsToRender = stats.slice(0, xAxisValues - 1).concat(Object.values(stats)[stats.length - 1]);
             }
 
             const path = svg.append('path')
-                .datum(stats.slice(0,xDomainValue.length))
+                .datum(statsToRender)
                 .attr('stats', d3.extent(stats, function(d) { return d[`${stat}`]}))
-                .attr('year', data.length)
+                .attr('year', stats.length)
                 .attr('id', className)
                 .attr('class', `line ${className}`)
                 .attr('d', d3.line()
                     .x(function (d) { return xScale(d.year) })
                     .y(function (d) { return yScale(d[stat])}))
-                
+                .on("mouseover", function () {
+                    d3.selectAll(`#stats-${className}`).style('display', 'block')
+                })
+                .on("mouseout", function () {
+                    d3.selectAll(`#stats-${className}`).style('display', 'none')
+                });
+
+            svg.append('g')
+                .classed('labels-group', true)
+                .selectAll('text')
+                .data(statsToRender)
+                .enter()
+                .append('text')
+                .attr('id', `stats-${className}`)
+                .attr('x', function (d) {
+                        return xScale(d.year);
+                    })
+                .attr('y', function (d) {
+                        return yScale(d[stat]);
+                    })
+                .text(function (d) { return d[stat]})
+                .style("display", "none")      
+            
             const totalLength = path.node().getTotalLength();
 
             path
@@ -117,14 +117,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 .duration(4000)
                 .ease(d3.easeLinear)
                 .attr("stroke-dashoffset", 0)
+
         })
     }
-
+ 
         const toggleLine = function (lastName, className, statChange) {
             if (!d3.select(`#${className}`)._groups[0][0]) {
-                let playersOnDOM = document.getElementsByClassName('line')
+                d3.selectAll('.labels-group').remove()
                 addLine(lastName, className, statChange)
-                playersOnDOMNames = [];
+                let playersOnDOM = document.getElementsByClassName('line')
+                let playersOnDOMNames = [];
                 for (let i = 0; i < playersOnDOM.length; i++) {
                     let name = playersOnDOM[i].getAttribute('id').split('-')[0]
                     playersOnDOMNames.push(name);
@@ -141,7 +143,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let statsDropdown = d3.select('#stat')
         let statChange = ['ppg'];
         statsDropdown.on('change', function() {
+            yAxisValues['max'] = null;
+            yAxisValues['min'] = null;
             d3.selectAll('.line').remove()
+            d3.selectAll('.labels-group').remove()
             statChange[0] = d3.event.target.value;
             addLine('jordan', 'jordan-line', statChange[0])
         })
@@ -153,4 +158,8 @@ document.addEventListener('DOMContentLoaded', () => {
         magicJohnson.on("click", () => toggleLine('johnson', 'johnson-line', statChange[0]))
         let lebronJames = d3.select('#lebron-stats')
         lebronJames.on("click", () => toggleLine('james', 'james-line', statChange[0]))
+
 });
+
+// if someones amount of careers is less than the one currently being displayed by the xaxis then the x-axis needs to be
+// re-rendered as well as every player currently being displayed's line
