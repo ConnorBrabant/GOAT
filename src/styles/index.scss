@@ -1,5 +1,6 @@
 body {
     background-color: lightgrey;
+    font-family: sans-serif;
 }
 
 .page {
@@ -11,6 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .title {
@@ -32,6 +34,36 @@ rect {
     stroke: black;
 }
 
+.opening {
+    width: 600px;
+}
+
+.bar-section {
+    display: flex;
+    width: 80%;
+}
+
+.bar-graph {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bar-graph-info {
+    width: 50%;
+}
+
+.line-section {
+    margin-top: 40px;
+    display: flex;
+    width: 80%;
+}
+
+.closing {
+    width: 600px;
+}
+
 .MJ-year-dropdown {
     display: flex;
     justify-content: center;
@@ -48,6 +80,71 @@ rect {
     text-align-last: center;
 }
 
+.line-graph-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.line-graph-info {
+    padding-right: 30px;
+}
+
+.line-graph-primary {
+    display: flex;
+}
+
+.line-graph-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.line-graph-buttons button {
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+button {
+    height: 30px;
+    width: 100px;
+    border-radius: 2px;
+    border: 1px solid black;
+}
+
+.larry-button {
+    background-color: green;
+    /* border: 1px solid white; */
+    color: white;
+}
+
+.magic-button {
+    background-color: #6F257F;
+    /* border: 1px solid gold; */
+    color: gold;
+}
+
+.lebron-button {
+    background-color:  #041E42;
+    /* border: 1px solid #860038; */
+    color: #860038; 
+
+}
+
+.stats-dropdown {
+    display: flex;
+    justify-content: center;
+}
+
+.stat {
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    background-color: #CE1141;
+    width: 200px;
+    height: 40px;
+    text-align-last: center;
+}
 .jordan-line {
     fill: none;
     stroke: #CE1141;

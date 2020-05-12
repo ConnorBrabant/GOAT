@@ -15,45 +15,88 @@
     <script src="./src/scripts/bargraph.js"></script>
     <script src='/src/scripts//linegraph.js'></script>
     <div class='page'>
-        
         <div class='main'>
             <h1 class='title'>Is MJ Actually the GOAT?</h1>
-            <div id='bar-graph'></div>
-            <div class='MJ-year-dropdown'>
-                <select class='MJ-year' id='year'>
-                    <option default>--Choose a Year--</option>
-                    <option value=1>Year 1</option>
-                    <option value=2>Year 2</option>
-                    <option value=3>Year 3</option>
-                    <option value=4>Year 4</option>
-                    <option value=5>Year 5</option>
-                    <option value=6>Year 6</option>
-                    <option value=7>Year 7</option>
-                    <option value=8>Year 8</option>
-                    <option value=9>Year 9</option>
-                    <option value=10>Year 10</option>
-                    <option value=11>Year 11</option>
-                    <option value=12>Year 12</option>
-                    <option value=13>Year 13</option>
-                    <option value=14>Year 14</option>
-                    <option value=15>Year 15</option>
-                </select>
-            </div>
-            <div id='line-graph'></div>
-            <button id='larry-stats'>Larry Bird</button>
-            <button id='magic-stats'>Magic Johnson</button>
-            <button id='lebron-stats'>Lebron James</button>
-            <div class='stats-dropdown'>
-                <select class='stat' id='stat'>
-                    <option default>--Choose a Stat</option>
-                    <option value='ppg'>Points Per Game</option>
-                    <option value='rpg'>Rebounds Per Game</option>
-                    <option value='apg'>Assists Per Game</option>
-                    <option value='blk'>Blocks Per Game</option>
-                    <option value='stl'>Steals Per Game</option>
-                    <option value='to'>Turnovers Per Game</option>
-                </select>
-            </div>
+            <p class='opening'>With the recent release of the 'Last Dance' documentary centered around the 97-98 Chicago Bulls, I began
+               to wonder what makes Michael Jordan the greatest basketball player of all time? Throughout this career, he 
+               has amassed an insane collection of awards: 5 MVPs, 6 Finals MVPs, 1 DPOY, 12x All-NBA, 10x All-Defense. Obviously
+               these awards stand as a testament to the dominance he had on the NBA so I decided to dive into the major statistics
+               that are utilized to compare players. 
+            </p>
+            <section class='bar-section'>
+                <div class='bar-graph'>
+                    <div id='bar-graph'></div>
+                    <div class='MJ-year-dropdown'>
+                        <select class='MJ-year' id='year'>
+                            <option default>--Choose a Year--</option>
+                            <option value=1>Year 1</option>
+                            <option value=2>Year 2</option>
+                            <option value=3>Year 3</option>
+                            <option value=4>Year 4</option>
+                            <option value=5>Year 5</option>
+                            <option value=6>Year 6</option>
+                            <option value=7>Year 7</option>
+                            <option value=8>Year 8</option>
+                            <option value=9>Year 9</option>
+                            <option value=10>Year 10</option>
+                            <option value=11>Year 11</option>
+                            <option value=12>Year 12</option>
+                            <option value=13>Year 13</option>
+                            <option value=14>Year 14</option>
+                            <option value=15>Year 15</option>
+                        </select>
+                    </div>
+                </div>
+                <div class='bar-graph-info'>
+                    <p> Individual statistics are a great way to compare a player's progression or regression
+                        across their career. It allows for the comparison of a player's performance from season to season. 
+                        The graph to left currently displays Jordan's career averages. By using the dropdown under it, you 
+                        are able to track how Jordan's stats change year to year.
+                    </p>
+                </div>
+            </section>
+            <section class='line-section'>
+                <div class='line-graph-info'>
+                    <p>Individual statistics also serve as the the primary comparison between different players. Although 
+                        the game and rules of basketball are always changing, these stats still provide great insight in comparing
+                        players that played in the same era or different. On the graph to the right, you can compare Michael Jordan's 
+                        career stats to the likes of other all time greats. Larry Bird, one of the best shooters the game has ever seen 
+                        combined with an all around game where he constantly among the leaders in assists and rebounds. Magic Johnson, the
+                        greatest passer of all time. LeBron James, arguably the greatest athlete to play basketball whos passing ability and 
+                        scoring ability both rank among the best all time. I chose these three because in my opinion, these three plus Jordan 
+                        are the greatest small-ball players of all time. 
+                    </p>
+                </div>
+                <div class='line-graph-container'>
+                    <div class='line-graph-primary'>
+                        <div class='line-graph-buttons'>
+                            <button class='larry-button' id='larry-stats'>Larry Bird</button>
+                            <button class='magic-button' id='magic-stats'>Magic Johnson</button>
+                            <button class='lebron-button' id='lebron-stats'>Lebron James</button>
+                        </div>
+                        <div class='line-graph-dropdown'>
+                            <div id='line-graph'></div>
+                            <div class='stats-dropdown'>
+                                <select class='stat' id='stat'>
+                                    <option default value='ppg'>Points Per Game</option>
+                                    <option value='rpg'>Rebounds Per Game</option>
+                                    <option value='apg'>Assists Per Game</option>
+                                    <option value='blk'>Blocks Per Game</option>
+                                    <option value='stl'>Steals Per Game</option>
+                                    <option value='to'>Turnovers Per Game</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <p class='closing'>
+                Now obviously there are aspects of the game of basketball that also attribute to a players
+                greatness that do not show up in the stat sheets as well as the evolution of more modern advanced
+                analytics that are much more complicated to quantify. However, I still believe that these core statistics
+                easily convey a players' skillset and overall impact in the game and can be used to form a conclusion on 
+                who is the greatest NBA player of all time. And that player is 
+            </p>
         </div>
     </div>
     

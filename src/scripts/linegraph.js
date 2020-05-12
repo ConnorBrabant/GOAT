@@ -44,8 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let xAxisValuesArray;
             let statsToRender;
-            // console.log(`${className}: ${xAxisValues}`)
-            // console.log(stats.length)
+
             if (!xAxisValues || xAxisValues > stats.length || changed) {
                 xAxisValues = stats.length;
                 xAxisValuesArray = Array.from(new Array(xAxisValues - 1), (x, i) => i + 1);
@@ -55,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 d3.selectAll('.y-axis').remove()
 
                 xScale.domain(xAxisValuesArray.map(ele => ele))
-                yScale.domain([yAxisValues['min'] - 2, yAxisValues['max'] + 2])
+                yScale.domain([yAxisValues['min'] - 2 <= 0 ? 0 : yAxisValues['min'] - 2, yAxisValues['max'] + 2])
 
                 const xAxis = d3.axisBottom()
                     .scale(xScale);
@@ -160,6 +159,3 @@ document.addEventListener('DOMContentLoaded', () => {
         lebronJames.on("click", () => toggleLine('james', 'james-line', statChange[0]))
 
 });
-
-// if someones amount of careers is less than the one currently being displayed by the xaxis then the x-axis needs to be
-// re-rendered as well as every player currently being displayed's line
