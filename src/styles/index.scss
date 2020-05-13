@@ -1,6 +1,21 @@
 body {
     background-color: white;
     font-family: sans-serif;
+    margin: 0px;
+}
+
+.page-header {
+    height: 150px;
+    width: 100%;
+    background-color: #CE1141;
+    border-bottom: 1px solid black;
+}
+
+.page-header-text {
+    font-size: 55px;
+    color: white;
+    font-weight: 600;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .page {
@@ -46,13 +61,49 @@ p {
     padding: 5px;
 }
 
+.terms { 
+    position: fixed;
+    left: 0;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    background-color: #CE1141;
+    padding: 5px;
+    border: 1px black solid;
+}
+
+.terms-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.terms-title {
+    color: white;
+    font-weight: 600;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.terms-title-info {
+    color: white;
+    font-size: 13px;
+}
+
 .terms-list {
     display: none;
 }
 
 .terms-list-show {
+    border-radius: 2px;
+    background-color: #CE1141;
+    position: absolute;
+    top: 30px;
     display: block;
+    list-style: none;
+    color: white;
+    list-style-position: outside;
 }
+
 
 .opening {
     width: 600px;
@@ -302,4 +353,11 @@ button {
 .goat-img {
     height: 200px;
     width: 200px;
+}
+
+.footer {
+    margin-top: 10px;
+    height: 100px;
+    width: inherit;
+    background-color: #CE1141;
 }

@@ -1,8 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     let terms = document.getElementById('terms-title');
-    terms.addEventListener('click', () => {
+    terms.addEventListener('mouseover', () => {
         let termsList = document.getElementById('terms-list')
-        if (termsList.getAttribute('class'))
+        termsList.classList.add('terms-list-show');
+    })
+
+    terms.addEventListener('mouseout', () => {
+        let termsList = document.getElementById('terms-list')
+        termsList.classList.remove('terms-list-show');
     })
 
     let firstImage = document.getElementById('first-img');
