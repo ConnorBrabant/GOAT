@@ -1,11 +1,13 @@
 body {
     background-color: white;
     font-family: sans-serif;
+    height: 100%;
+    width: 100%;
     margin: 0px;
 }
 
 .page-header {
-    height: 150px;
+    height: 15%;
     width: 100%;
     background-color: #CE1141;
     border-bottom: 1px solid black;
@@ -14,16 +16,25 @@ body {
     align-items: center;
 }
 
+.header-goat {
+    height: 100px;
+    width: 100px;
+    margin-right: 5px;
+    border: none;
+}
 .page-header-text {
-    font-size: 55px;
+    display: flex;
+    align-items: center;
+    font-size: 85px;
     color: white;
     font-weight: 600;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-.page-header-icons {
+.page-header-icons a {
     font-size: 25px;
     color: white;
+    text-decoration: none;
     padding: 10px;
 }
 
@@ -34,6 +45,8 @@ body {
 .page {
     display: flex;
     justify-content: center;
+    height: 100%;
+    width: 100%;
 }
 
 .main {
