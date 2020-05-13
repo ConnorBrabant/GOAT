@@ -9,6 +9,9 @@ body {
     width: 100%;
     background-color: #CE1141;
     border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .page-header-text {
@@ -16,6 +19,16 @@ body {
     color: white;
     font-weight: 600;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.page-header-icons {
+    font-size: 25px;
+    color: white;
+    padding: 10px;
+}
+
+.page-header-icons a:hover {
+    font-size: 30px;
 }
 
 .page {
