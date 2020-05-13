@@ -39,22 +39,28 @@ rect {
 }
 
 .bar-section {
+    margin-top: 40px;
     display: flex;
     width: 80%;
 }
 
 .bar-graph {
-    width: 50%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .bar-graph-info {
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+}
+
+.first-img {
+    width: 80%;
+    height: 60%;
 }
 
 .line-section {
@@ -181,4 +187,15 @@ button {
   fill: #F1F3F3;
   stroke: #6F257F;
   stroke-width: 5px;
+}
+
+.closing-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.goat-img {
+    height: 200px;
+    width: 200px;
 }

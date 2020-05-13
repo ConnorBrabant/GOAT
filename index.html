@@ -13,7 +13,8 @@
 
 <body>
     <script src="./src/scripts/bargraph.js"></script>
-    <script src='/src/scripts//linegraph.js'></script>
+    <script src='./src/scripts/linegraph.js'></script>
+    <script src='./src/scripts/goat.js'></script>
     <div class='page'>
         <div class='main'>
             <div class='intro'>
@@ -55,7 +56,7 @@
                         The graph to left currently displays Jordan's career averages. By using the dropdown under it, you 
                         are able to track how Jordan's stats change year to year.
                     </p>
-                    <img src='/src/images/mj-first.jpg'>
+                    <img class='first-img' src='/src/images/mj-first.jpg'>
                 </div>
             </section>
             <section class='line-section'>
@@ -69,7 +70,7 @@
                         scoring ability both rank among the best all time. I chose these three because in my opinion, these three plus Jordan 
                         are the greatest small-ball players of all time. 
                     </p>
-                    <img src='/src/images/mg-second.png'>
+                    <img class='second-img' src='/src/images/mg-second.png'>
                 </div>
                 <div class='line-graph-container'>
                     <div class='line-graph-primary'>
@@ -94,13 +95,16 @@
                     </div>
                 </div>
             </section>
-            <p class='closing'>
-                Now obviously there are aspects of the game of basketball that also attribute to a players
+            <section class='closing-section'>
+                <p class='closing'>
+                Now obviously there are aspects of the game of basketball that also attribute to a player's
                 greatness that do not show up in the stat sheets as well as the evolution of more modern advanced
                 analytics that are much more complicated to quantify. However, I still believe that these core statistics
                 easily convey a players' skillset and overall impact in the game and can be used to form a conclusion on 
                 who is the greatest NBA player of all time. And that player is 
-            </p>
+                </p>
+                <img class='goat-img' id='goat' src='./src/images/goat.jpeg'>
+            </section>
         </div>
     </div>
     
