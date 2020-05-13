@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: white;
     font-family: sans-serif;
 }
 
@@ -46,10 +46,18 @@ p {
     padding: 5px;
 }
 
+.terms-list {
+    display: none;
+}
+
+.terms-list-show {
+    display: block;
+}
+
 .opening {
     width: 600px;
-    border: 2px solid black;
-    padding: 4px;
+    border: 1px solid black;
+    padding: 5px;
     border-radius: 5px;
     background-color: lightgrey;
 }
@@ -88,6 +96,15 @@ p {
     border-radius: 5px;
 }
 
+.first-img-text {
+    margin-top: 5px;
+    display: none;
+}
+
+.first-img-text-show {
+    margin-top: 5px;
+    display: block;
+}
 .first-img {
     width: 80%;
     height: 60%;
@@ -99,8 +116,65 @@ p {
     width: 80%;
 }
 
+.second-img-text {
+    margin-top: 5px;
+    display: none;
+}
+
+.second-img-text-show {
+    margin-top: 5px;
+    display: block;
+}
+
+
 .closing {
+    margin-top: 40px;
     width: 600px;
+}
+
+.goat-img-outer {
+    background-color: transparent;
+    width: 600px;
+    height: 400px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px;
+}
+
+.goat-img-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.goat-img-outer:hover .goat-img-inner {
+  transform: rotateY(180deg);
+}
+
+.goat-front, .goat-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.goat-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.goat-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flip-pic {
+    height: 100%;
+    width: 100%;
 }
 
 .MJ-year-dropdown {

@@ -14,9 +14,24 @@
 <body>
     <script src="./src/scripts/bargraph.js"></script>
     <script src='./src/scripts/linegraph.js'></script>
-    <script src='./src/scripts/goat.js'></script>
+    <script src='./src/scripts/images.js'></script>
+
     <div class='page'>
         <div class='main'>
+            <div class='terms'>
+                <div id='terms-title' class='terms-title'>Terminology</div>
+                <ul id='terms-list' class='terms-list'>
+                    <li>GOAT: Greatest of All-Time</li>
+                    <li>MVP: Most Valuable Player</li>
+                    <li>DPOY: Defensive Player of the Year</li>
+                    <li>PPG: Points Per Game</li>
+                    <li>APG: Assists Per Game</li>
+                    <li>RPG: Rebounds Per Game</li>
+                    <li>STL: Steals Per Game</li>
+                    <li>BLK: Blocks Per Game</li>
+                    <li>TO: Turnovers Per Game</li>
+                </ul>
+            </div>
             <div class='intro'>
             <h1 class='title'>Is MJ Actually the GOAT?</h1>
             <p class='opening'>With the recent release of the 'Last Dance' documentary centered around the 97-98 Chicago Bulls, I began
@@ -56,7 +71,10 @@
                         The graph to left currently displays Jordan's career averages. By using the dropdown under it, you 
                         are able to track how Jordan's stats change year to year.
                     </p>
-                    <img class='first-img' src='/src/images/mj-first.jpg'>
+                    <img id='first-img' class='first-img' src='/src/images/mj-first.jpg'>
+                    <div id='first-img-text' class='first-img-text'>Photo taken during the 1988 Slam Dunk Contest
+                        by Walter Iooss Jr
+                    </div>
                 </div>
             </section>
             <section class='line-section'>
@@ -70,7 +88,10 @@
                         scoring ability both rank among the best all time. I chose these three because in my opinion, these three plus Jordan 
                         are the greatest small-ball players of all time. 
                     </p>
-                    <img class='second-img' src='/src/images/mg-second.png'>
+                    <img id='second-img' class='second-img' src='/src/images/mg-second.png'>
+                    <div id='second-img-text' class='second-img-text'>
+                        Photo taken during the 1992 Olympics when Michael and Magic were part of the Dream Team
+                    </div>
                 </div>
                 <div class='line-graph-container'>
                     <div class='line-graph-primary'>
@@ -103,12 +124,21 @@
                 easily convey a players' skillset and overall impact in the game and can be used to form a conclusion on 
                 who is the greatest NBA player of all time. And that player is 
                 </p>
-                <img class='goat-img' id='goat' src='./src/images/goat.jpeg'>
-            </section>
+                <div class='goat-img-outer'>
+                    <div class='goat-img-inner'>
+                        <div class='goat-front'>
+                            <img class='flip-pic' src='./src/images/goat.jpeg'>
+                        </div>
+                        <div class='goat-back'>
+                            <img class='flip-pic' src='./src/images/mj-third.jpg'>
+                        </div>
+                    </div>
+                </div>
+                </section>
         </div>
     </div>
     <div class='footer'>
-        
+
     </div>
     
 
