@@ -1,5 +1,5 @@
 body {
-    background-color: lightgrey;
+    background-color: black;
     font-family: sans-serif;
 }
 
@@ -22,6 +22,8 @@ body {
 
 svg {
     background-color: lightgrey;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 h1 {
@@ -34,8 +36,22 @@ rect {
     stroke: black;
 }
 
+img, p {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+p {
+    background-color: lightgrey;
+    padding: 5px;
+}
+
 .opening {
     width: 600px;
+    border: 2px solid black;
+    padding: 4px;
+    border-radius: 5px;
+    background-color: lightgrey;
 }
 
 .bar-section {
@@ -56,6 +72,20 @@ rect {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
+}
+
+.bar-graph-info p {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: lightgrey;
+}
+
+.bar-graph-info img {
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 .first-img {
