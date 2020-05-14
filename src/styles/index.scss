@@ -13,7 +13,6 @@ body {
     border-bottom: 1px solid black;
     display: flex;
     align-items: center;
-    justify-content: space-around;
 }
 
 .header-goat {
@@ -24,9 +23,8 @@ body {
 }
 
 .page-header-text {
-    width: 25%;
     display: flex;
-    align-items: center;
+    justify-content: center;
     font-size: 85px;
     color: white;
     font-weight: 600;
@@ -34,7 +32,8 @@ body {
 }
 
 .page-header-icons {
-    width: 25%;
+    display: flex;
+    justify-content: center;
 }
 
 .page-header-icons a {
@@ -90,14 +89,16 @@ rect {
     stroke: black;
 }
 
-img, p {
+.main img {
     border: 1px solid black;
     border-radius: 5px;
 }
 
-p {
+.main p {
     background-color: lightgrey;
     padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 .terms { 
@@ -193,20 +194,12 @@ p {
 }
 
 .bar-graph-info {
-    box-sizing: border-box;
     margin-left: 5%;
     width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-}
-
-.bar-graph-info p {
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 5px;
-    background-color: lightgrey;
 }
 
 .bar-graph-info img {
@@ -217,13 +210,16 @@ p {
 
 .first-img-text {
     margin-top: 5px;
-    display: none;
+    opacity: 0;
 }
 
 .first-img-text-show {
-    margin-top: 5px;
-    display: block;
+    opacity: 1;
+    width: auto;
+    height: auto;
+    text-align: center;
 }
+
 .first-img {
     width: 80%;
     height: 60%;
@@ -300,7 +296,11 @@ p {
     width: 100%;
 }
 
+select {
+    border: 1px solid black;
+}
 .MJ-year-dropdown {
+    margin-top: 5px;
     display: flex;
     justify-content: center;
 }
@@ -419,6 +419,7 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .goat-img {
@@ -431,4 +432,50 @@ button {
     height: 100px;
     width: inherit;
     background-color: #CE1141;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid black;
+}
+
+.footer-text {
+    background-color: none;
+}
+
+.footer-name {
+    background-color: none;
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-name p {
+    margin: 10px;
+}
+
+.footer-name a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+}
+.footer-icons a{
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.footer-icons a:hover {
+    font-size: 30px;
+}
+
+.footer-name a:hover {
+    font-style: italic;
 }

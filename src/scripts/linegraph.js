@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 .attr('id', className)
                 .attr('class', `line ${className}`)
                 .attr('d', d3.line()
-                    .x(function (d) { return xScale(d.year) })
+                    .x(function (d) { return xScale(d.year) + 15})
                     .y(function (d) { return yScale(d[stat])}))
                 .on("mouseover", function () {
                     d3.selectAll(`#stats-${className}`).style('display', 'block')
