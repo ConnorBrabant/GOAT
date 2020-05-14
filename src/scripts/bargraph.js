@@ -3,13 +3,16 @@ document.addEventListener('DOMContentLoaded', () => {
         width = 600 - margin.left - margin.right,
         height = 600 - margin.top - margin.bottom;
 
+    let graphArea = document.getElementById('bar-graph');
+    let graphWidth = graphArea.offsetWidth - margin.left - margin.right;
+
     const svg = d3.select("#bar-graph").append('svg')
         .attr("width", '100%')
         .attr("height", height + margin.top + margin.bottom)
         .append('g')
-        .attr('transform', 'translate(' + margin.bottom + ',' + margin.top + ')');
+        .attr('transform', 'translate(' + margin.bottom + ',' + margin.top + ')')
 
-    const xScale = d3.scaleBand().range([0, width]).padding(0.4);
+    const xScale = d3.scaleBand().range([0, graphWidth]).padding(0.4);
     const yScale = d3.scaleLinear().range([height, 0]);
 
     d3.csv('/src/data/jordandata.csv', function (data) {
