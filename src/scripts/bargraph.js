@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
         height = 600 - margin.top - margin.bottom;
 
     const svg = d3.select("#bar-graph").append('svg')
-        .attr("width", width + margin.left + margin.right)
+        .attr("width", '100%')
         .attr("height", height + margin.top + margin.bottom)
         .append('g')
         .attr('transform', 'translate(' + margin.bottom + ',' + margin.top + ')');

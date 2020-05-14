@@ -12,23 +12,29 @@ body {
     background-color: #CE1141;
     border-bottom: 1px solid black;
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-around;
 }
 
 .header-goat {
-    height: 100px;
+    height: 100%;
     width: 100px;
     margin-right: 5px;
     border: none;
 }
+
 .page-header-text {
+    width: 25%;
     display: flex;
     align-items: center;
     font-size: 85px;
     color: white;
     font-weight: 600;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.page-header-icons {
+    width: 25%;
 }
 
 .page-header-icons a {
@@ -62,6 +68,7 @@ body {
 }
 
 svg {
+    width: 100%;
     background-color: lightgrey;
     border: 1px solid black;
     border-radius: 5px;
@@ -90,24 +97,33 @@ p {
 .terms { 
     position: fixed;
     left: 0;
+} 
+
+
+.terms-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 0;
     border-radius: 2px;
     display: flex;
     justify-content: center;
     background-color: #CE1141;
     padding: 5px;
     border: 1px black solid;
-}
-
-.terms-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 5%;
 }
 
 .terms-title {
+    height: 25px;
     color: white;
     font-weight: 600;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.terms-title-hide {
+    display: none;
 }
 
 .terms-title-info {
@@ -116,23 +132,41 @@ p {
 }
 
 .terms-list {
+    padding-left: 0;
+    margin: 0;
     display: none;
 }
 
 .terms-list-show {
+    width: max-content;
+    border: 1px black solid;
+    font-size: .7em;
+    border: 1px solid black;
     border-radius: 2px;
     background-color: #CE1141;
-    position: absolute;
-    top: 30px;
     display: block;
     list-style: none;
+    padding-left: 0;
+    margin: 0;
     color: white;
     list-style-position: outside;
 }
 
+.terms-list-show div {
+    height: 13px;
+    color: white;
+    font-weight: 600;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
 
+.terms-list-show li {
+    padding: 2px;
+    display: block;
+} 
+.intro {
+    width: 45%;
+}
 .opening {
-    width: 600px;
     border: 1px solid black;
     padding: 5px;
     border-radius: 5px;
@@ -153,6 +187,8 @@ p {
 }
 
 .bar-graph-info {
+    box-sizing: border-box;
+    margin-left: 5%;
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -193,6 +229,18 @@ p {
     width: 80%;
 }
 
+.line-graph-info {
+    width: 40%;
+}
+
+.line-graph-info img, div {
+    width: 100%;
+}
+
+.line-graph-container {
+    width: 60%
+}
+
 .second-img-text {
     margin-top: 5px;
     display: none;
@@ -206,14 +254,13 @@ p {
 
 .closing {
     margin-top: 40px;
-    width: 600px;
+    width: 45%;
 }
 
 .goat-img-outer {
     background-color: transparent;
     width: 600px;
     height: 400px;
-    border: 1px solid #f1f1f1;
     perspective: 1000px;
 }
 
@@ -238,14 +285,7 @@ p {
   backface-visibility: hidden;
 }
 
-.goat-front {
-  background-color: #bbb;
-  color: black;
-}
-
 .goat-back {
-  background-color: dodgerblue;
-  color: white;
   transform: rotateY(180deg);
 }
 
@@ -285,7 +325,6 @@ p {
 
 .line-graph-buttons {
     display: flex;
-    flex-direction: column;
     justify-content: center;
 }
 

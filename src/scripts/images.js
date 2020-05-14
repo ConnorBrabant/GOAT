@@ -1,13 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     let terms = document.getElementById('terms-title');
+    let termsList = document.getElementById('terms-list')
+
     terms.addEventListener('mouseover', () => {
-        let termsList = document.getElementById('terms-list')
+        terms.classList.add('terms-title-hide')
         termsList.classList.add('terms-list-show');
     })
 
-    terms.addEventListener('mouseout', () => {
-        let termsList = document.getElementById('terms-list')
+    termsList.addEventListener('mouseout', () => {
         termsList.classList.remove('terms-list-show');
+        terms.classList.remove('terms-title-hide');
     })
 
     let firstImage = document.getElementById('first-img');
