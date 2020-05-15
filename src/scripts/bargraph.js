@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const xScale = d3.scaleBand().range([0, graphWidth]).padding(0.4);
     const yScale = d3.scaleLinear().range([height, 0]);
 
-    d3.csv('https://github.com/ConnorBrabant/Basketball/blob/master/src/data/birddata.csv', function (data) {
+    d3.csv('https://connorbrabant.github.io/Basketball/src/data/jordandata.csv', function (data) {
         const dropdown = d3.select('#year')
         const allData = data;
         let subData = [];
