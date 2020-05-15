@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let xAxisValues = null;
 
     const addLine = function(pathname, className, stat) {
-        d3.csv(`/src/data/${pathname}data.csv`, function (data) {
+        d3.csv(`https://connorbrabant.github.io/Basketball/src/data/${pathname}data.csv`, function (data) {
             let stats = [];
             data.forEach(ele => {
                 if (typeof ele.year !== 'career') {
