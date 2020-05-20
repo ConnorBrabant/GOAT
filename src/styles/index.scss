@@ -481,3 +481,7 @@ button {
 .footer-name a:hover {
     font-style: italic;
 }
+
+.terms-list, .terms-button:hover, img:hover, select:hover, button:hover {
+    cursor: pointer;
+}
