@@ -2,15 +2,27 @@ document.addEventListener('DOMContentLoaded', () => {
     let terms = document.getElementById('terms-title');
     let termsList = document.getElementById('terms-list')
 
-    terms.addEventListener('mouseover', () => {
+    terms.addEventListener('click', () => {
         terms.classList.add('terms-title-hide')
         termsList.classList.add('terms-list-show');
     })
 
-    termsList.addEventListener('mouseout', () => {
+    termsList.addEventListener('click', () => {
         termsList.classList.remove('terms-list-show');
         terms.classList.remove('terms-title-hide');
     })
+
+    window.onscroll = () => { stickyInfo() }
+
+    let termsInfo = document.getElementById('terms')
+    let offsetSticky = termsInfo.offsetTop;
+    function stickyInfo() {
+        if (window.pageYOffset > offsetSticky) {
+            termsInfo.classList.add('stick')
+        } else {
+            termsInfo.classList.remove('stick')
+        }
+    };
 
     let firstImage = document.getElementById('first-img');
     firstImage.addEventListener('mouseover', () => {
@@ -33,4 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let secondImagetext = document.getElementById('second-img-text');
         secondImagetext.classList.remove('second-img-text-show')
     })
+
+
 })

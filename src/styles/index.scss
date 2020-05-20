@@ -102,17 +102,19 @@ rect {
 }
 
 .terms { 
-    position: fixed;
+    position: absolute;
     left: 0;
 } 
 
+.stick {
+    position: fixed;
+    top: 0;
+}
 
 .terms-button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: fixed;
-    left: 0;
     border-radius: 2px;
     display: flex;
     justify-content: center;
