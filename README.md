@@ -1,7 +1,6 @@
 # GOAT
+![](./src/images/readme.gif)
 [Live Site](https://connorbrabant.github.io/Basketball)
-
-![](.src/images/readme.gif)
 
 ## Background and Overview
 This app will be a mesh between a data analysis and game. It will focus on a select few players from the history of the NBA and display
