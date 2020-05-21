@@ -1,5 +1,6 @@
 # GOAT
 
+[Live Site](https://connorbrabant.github.io/Basketball)
 ## Background and Overview
 This app will be a mesh between a data analysis and game. It will focus on a select few players from the history of the NBA and display
 graphs and data about their individual stats and accolades. It will also feature a game where players can play a simplified version
@@ -13,7 +14,7 @@ Users are able to
   * interact with line graph that compares Jordan's career stats to other NBA greats
   
  ## Wireframe
- []!(./src/images/wireframe.png)
+ ![](./src/images/wireframe.png)
  
  ## API and Technology 
   -JavaScript, HTML, CSS to display data 
