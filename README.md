@@ -1,5 +1,6 @@
 # GOAT
 ![](./src/images/readme.gif)
+
 [Live Site](https://connorbrabant.github.io/Basketball)
 
 ## Background and Overview
