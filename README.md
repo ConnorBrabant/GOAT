@@ -1,24 +1,34 @@
-Proposal 
+# GOAT
 
-Background and Overview
+## Background and Overview
 This app will be a mesh between a data analysis and game. It will focus on a select few players from the history of the NBA and display
 graphs and data about their individual stats and accolades. It will also feature a game where players can play a simplified version
 of a one on one game. 
 
-Functionality and MVPS 
-In Basketball, users will be able to 
-  - view dynamic graphic graphs comparing individual players 
-  - graphs will show individual stats like PPG, RPG, APG, as well as awards won like MVPs
-  - game feature will allow players to shoot a basketball into a hoop or play 1 on 1 
+There are few people who transcend their line of work and become immortalized as the pinnacle of said field. For basketball, this person is Michael Jordan. Jordan redefined the game of basketball while exploding the NBA's popularity in the world. Many people call him the GOAT of the NBA. GOAT is a web application that allows users to dynamically interact with Michael Jordan's stats throughout his career and give insight into why most consider him the best ever. 
+
+## Functionality and MVPS 
+Users are able to
+  * view dynamic bar graph displaying Michael Jordan's stats for each year he played in the NBA 
+  * interact with line graph that compares Jordan's career stats to other NBA greats
   
-  Wireframe
-  https://wireframe.cc/KcLD8N
+ ## Wireframe
+ []!(./src/images/wireframe.png)
  
- API and Technology 
-  -NBA.com API to access data 
-  -JS, HTML, CSS to display data as well as the game 
-  -Three.js to make ball and physics for game 
+ ## API and Technology 
+  -JavaScript, HTML, CSS to display data 
+  -D3.js library to construct graphs to displaying data
   
-  Implementation Timeline
-   -Setting up data from API as well as displaying graphs -> 1 Day 
-   -Creating game -> 2 Days 
+ ## Implementation Timeline
+### Day 1
+* Implementation of webpack and modules
+* Basic structure of page
+### Day 2 
+* Learning D3.js library 
+* Retrieving and researching data to use for graphs
+### Day 3
+* Creating bar graph for Jordan's individual seasons stats
+* Outline of line graph
+### Day 4
+* Creating line graph for Jordan and other players' career stats
+* CSS styling for webpage
