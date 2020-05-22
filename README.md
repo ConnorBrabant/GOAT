@@ -19,10 +19,14 @@ Users are able to
  ![](./src/images/wireframe.png)
  
  ## API and Technology 
- * JavaScript, HTML, CSS to display data 
+ * JavaScript
+ * HTML 5 
+ * CSS 3  
  * D3.js library to construct graphs to displaying data
  
- ## Highlighted Feature 
+ ## Highlighted Features
+ 
+ ### Line Graph
 The implementation of a graph that dynamically changes based on user input is dependent on what data to display on the axes. For the line graph, it must account for the length of each player's career as well as the range between players for the maximum and minimum value of the statistics to show. These values must constantly be readjusted for each player or stat the user chooses to display. Below shows the process for choosing what values to render for the y-axis. 
 ```javascript
     const yAxisValues = {
@@ -54,6 +58,38 @@ else if (stats.length >= xAxisValues) {
             }
 ```
 Stats is an array of the player's career statistics where the length of the array is equal to the amount of seasons played plus an extra index for their career average. If there is no previous xAxisValues or the current xAxisValues is greater than the current player's career length, the graph needs to be rendered to only the show the amount of seasons played by the current player who is being processed. Also if changed,a variable seen in the code above that accounts for if the y-axis values have changed, is set to true, the graph must rerender. If any of these conditions to rerender are met, the xAxisValues variable is reassigned to this new, lower amount of seasons played to be compared to any future players that may be selected by the user. The else if conditional accounts for players who careers are longer than the career length currently shown by the x-axis. It slices the player's data up to the highest year shown by the graph and then concatentates the career average to this newly sliced array.
+
+### Bar Graph 
+For the bar graph, the bars themselves needed to change based on what year the user is selecting. When the user would select a new year, that specific year's data would be retrieved and then be used to structure the new bars that had to be rendered. The bars height is the only visual aspect of the bar that needs to change as the x-axis value remain the same from year to year. In order to visualize the change from year to year, a transformation was used.
+
+```javascript 
+dropdown.on("change", function () {
+
+            year = d3.event.target.value;
+            let subData = [];
+            for (ele in allData[year-1]) {
+                let obj = {}
+                obj['stat'] = ele
+                obj['value'] = parseFloat(allData[year-1][ele])
+                subData.push(obj);
+            }
+            data = subData.slice(1);
+            
+            const bar = svg.selectAll('rect')
+            bar
+                .data(data)
+                .enter()
+                .append('rect')
+                .merge(bar)
+                .transition()
+                .duration(1000)
+                .attr("y", function (d) {
+                    return yScale(d.value)
+                })
+                .attr("height", function (d) { return height - yScale(d.value) });  
+
+        });
+```
 
  ## Implementation Timeline
 ### Day 1
