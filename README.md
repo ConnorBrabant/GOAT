@@ -14,9 +14,6 @@ There are few people who transcend their line of work and become immortalized as
 Users are able to
   * view dynamic bar graph displaying Michael Jordan's stats for each year he played in the NBA 
   * interact with line graph that compares Jordan's career stats to other NBA greats
-  
- ## Wireframe
- ![](./src/images/wireframe.png)
  
  ## API and Technology 
  * JavaScript
@@ -108,3 +105,6 @@ dropdown.on("change", function () {
 ### Day 4
 * Creating line graph for Jordan and other players' career stats
 * CSS styling for webpage
+
+## Wireframe
+ ![](./src/images/wireframe.png)
